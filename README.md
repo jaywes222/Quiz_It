@@ -1,4 +1,4 @@
-# Dice_Roll
+# quiz_it
 
 A new Flutter project.
 
