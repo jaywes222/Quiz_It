@@ -15,7 +15,7 @@ class _QuestionsScreenState extends State<QuestionScreen> {
   @override
   Widget build(context) {
     return SizedBox(
-      width: double.infinity, // USe as Much Width as Possible
+      width: double.infinity, // Use as Much Width as Possible
       child: Column(
         mainAxisAlignment: MainAxisAlignment.center,
         children: [

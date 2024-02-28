@@ -20,7 +20,7 @@ class _QuestionsScreenState extends State<QuestionsScreen> {
   void answerQuestion(String selectedAnswers) {
     //currentQuestionIndex = currentQuestionIndex + 1;
     //currentQuestionIndex += 1;
-    widget.onSelectAnswer(selectedAnswers);
+    widget.onSelectAnswer('...');
     setState(
       () {
         currentQuestionIndex++; // Increments the Value by 1 ONLY!
