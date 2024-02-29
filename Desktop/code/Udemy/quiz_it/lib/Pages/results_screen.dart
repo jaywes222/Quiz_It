@@ -15,9 +15,9 @@ class ResultsScreen extends StatelessWidget {
 
   List<Map<String, Object>> getSummaryData() {
     final List<Map<String, Object>> summary = [];
-    
-    //Goes through all the answers chosen by a s]user and creates a summary based on those answers
-    for (var i = 0; i < chosenAnswers.length; i++) {
+
+    //Goes through all the answers chosen by a user and creates a summary based on those answers
+    for (var i = 0; i < chosenAnswers.length; i + 2) {
       summary.add(
         {
           // A colon(for Maps) is used as opposed to Variables which uses =

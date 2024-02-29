@@ -1,119 +1,61 @@
 import 'package:flutter/material.dart';
-import 'package:get/get.dart';
 import 'package:google_fonts/google_fonts.dart';
-import 'package:quiz_it/Pages/registration_screen.dart';
-import 'package:quiz_it/Views/customtext.dart';
-import 'package:quiz_it/Views/customtextfield.dart';
+import 'package:quiz_it/Pages/dashboard_screen.dart';
 
 class StartScreen extends StatelessWidget {
-  // Constructor function
-  const StartScreen(
-    this.startQuiz, {
-    super.key,
-  });
+  const StartScreen(this.startQuiz, {super.key});
 
   final void Function() startQuiz;
 
   @override
   Widget build(context) {
-    TextEditingController usernameController = TextEditingController();
-    TextEditingController passwordController = TextEditingController();
     return Center(
-      child: Padding(
-        padding: const EdgeInsets.all(8.0),
-        child: Column(
-          mainAxisSize: MainAxisSize.min,
-          children: [
-            const CustomText(label: 'Login Page'),
-            const SizedBox(
-              height: 50,
+      child: Column(
+        mainAxisSize: MainAxisSize.min,
+        children: [
+          Image.asset(
+            'assets/images/quiz-logo.png',
+            width: 300,
+            color: const Color.fromARGB(150, 255, 255, 255),
+          ),
+          const SizedBox(height: 80),
+          Text(
+            'Learn Flutter the fun way!',
+            style: GoogleFonts.lato(
+              color: const Color.fromARGB(255, 237, 223, 252),
+              fontSize: 24,
             ),
-            Image.asset(
-              'assets/images/quiz-logo.png',
-              width: 300,
-              height: 110,
-              //Adding Transparency To The Image
-              color: const Color.fromARGB(150, 255, 255, 255),
-            ),
-
-            const SizedBox(
-              height: 80,
-            ),
-
-            const CustomText(label: 'Username'),
-
-            CustomTextField(
-              controller: usernameController,
-              hintMessage: 'Email/ Phone Number',
-              icon: Icons.person_2_outlined,
-            ),
-
-            const SizedBox(
-              height: 10.0,
-            ),
-
-            const CustomText(
-              label: 'Password',
-            ),
-
-            CustomTextField(
-              controller: passwordController,
-              hintMessage: 'Siri Yako',
-              icon: Icons.lock_outlined,
-              obscureText: true,
-              isPassword: true,
-            ),
-
-            const SizedBox(
-              height: 10.0,
-            ),
-
-            const CustomText(
-              label: 'Forgot Password?',
-              fontSize: 18,
-            ),
-
-            const SizedBox(
-              height: 10.0,
-            ),
-
-            const SizedBox(
-              height: 30,
-            ),
-
-            //Creating A Clickable ICon
-            Row(
-              mainAxisAlignment: MainAxisAlignment.center,
-              children: [
-                OutlinedButton.icon(
-                  onPressed: startQuiz,
-                  style: OutlinedButton.styleFrom(
-                    foregroundColor: Colors.white,
-                  ),
-                  icon: const Icon(Icons.arrow_right_alt),
-                  label: const Text('Quiz It!'),
+          ),
+          const SizedBox(height: 30),
+          Row(
+            mainAxisAlignment: MainAxisAlignment.center,
+            children: [
+              OutlinedButton.icon(
+                onPressed: startQuiz,
+                style: OutlinedButton.styleFrom(
+                  foregroundColor: Colors.white,
                 ),
-                const SizedBox(
-                  width: 100,
-                ),
-                ElevatedButton(
-                  onPressed: () {
-                    Navigator.push(
-                        context,
-                        MaterialPageRoute(
-                            builder: (context) => const RegistrationScreen()));
-                  },
-                  child: const Text("Register Now"),
-                ),
-              ],
-            ),
-          ],
-        ),
+                icon: const Icon(Icons.arrow_right_alt),
+                label: const Text('Start Quiz'),
+              ),
+              const SizedBox(
+                width: 150,
+              ),
+              OutlinedButton.icon(
+                onPressed: () {
+                  Navigator.push(
+                      context,
+                      MaterialPageRoute(
+                          builder: (context) => const DashboardScreen()));
+                },
+                style: OutlinedButton.styleFrom(foregroundColor: Colors.white),
+                icon: const Icon(Icons.arrow_circle_right_outlined),
+                label: const Text('Get Started'),
+              ),
+            ],
+          ),
+        ],
       ),
     );
-  }
-
-  void navigateToRegistration() {
-    Get.toNamed("/registration_screen");
   }
 }
