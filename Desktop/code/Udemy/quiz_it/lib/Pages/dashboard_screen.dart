@@ -3,14 +3,14 @@ import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:quiz_it/Controllers/home.controller.dart';
 import 'package:quiz_it/Pages/login_screen.dart';
-import 'package:quiz_it/Pages/registration_screen.dart';
+import 'package:quiz_it/Pages/profile.dart';
 import 'package:quiz_it/Pages/settings.dart';
 
 HomeController homeController = Get.put(HomeController());
 
 var pages = [
   const LoginScreen(),
-  const RegistrationScreen(),
+  const ProfileScreen(),
   const SettingsScreen(),
 ];
 
